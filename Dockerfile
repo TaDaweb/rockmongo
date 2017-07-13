@@ -3,9 +3,10 @@ FROM alpine:3.6
 LABEL maintainer="Giuseppe Pellegrino <g.pellegrino@tadaweb.com>"
 
 RUN apk update \
-    && apk add lighttpd php5 php5-cli php5-common php5-gd php5-curl php5-pgsql php5-cgi fcgi php5-pdo php5-dom php5-pear php5-dev php5-xml \
+    && apk add lighttpd php5-common php5-gd php5-curl php5-cgi fcgi php5-pdo php5-dom php5-pear php5-dev php5-xml \
     && apk add autoconf gcc g++ make libffi-dev openssl-dev bash wget && rm -rf /var/cache/apk/* \
-    && ln -s /usr/bin/php5 /usr/bin/php
+    && ln -s /usr/bin/php5 /usr/bin/php \
+    && ln -s /usr/bin/php-cgi5 /usr/bin/php-cgi
 
 RUN sed -i -e 's/-n//g' /usr/bin/pecl \
     && printf "\n" | pecl install mongo \
