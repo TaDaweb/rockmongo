@@ -38,7 +38,7 @@ for ($i = 0; $i < count($seeds); $i++) {
     if (getenv("MONGO_AUTH") === 'true') {
         if (getenv("MONGO_USER") !== false) {
             $MONGO["servers"][$i]["mongo_user"] = getenv("MONGO_USER"); //mongo authentication user name, works only if mongo_auth=false
-            $MONGO["servers"][$i]["mongo_pass"] = getenv("MONGO_PASSWORD)"; //mongo authentication password, works only if mongo_auth=false
+            $MONGO["servers"][$i]["mongo_pass"] = getenv("MONGO_PASSWORD"); //mongo authentication password, works only if mongo_auth=false
         }
         $MONGO["servers"][$i]["mongo_auth"] = true; //enable mongo authentication?
         $MONGO["servers"][$i]["control_auth"] = false; //enable control users, works only if mongo_auth=false
