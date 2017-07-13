@@ -30,7 +30,7 @@ COPY config.php /var/www/localhost/rockmongo/config.php
 
 RUN chmod +x /var/www/localhost/rockmongo/config.php
 
-ENV ROCKMONGO_PORT 8060
+ENV ROCKMONGO_PORT 8050
 ENV MONGO_HOSTS localhost:27017
 
 CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]

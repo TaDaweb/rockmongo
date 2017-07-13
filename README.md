@@ -18,7 +18,7 @@ docker run -d --name rockmongo -e MONGO_HOSTS=mongo1.host1:27017,mongo2.host2:27
 | Variable | default value | description |
 | -------- | ------------- | ----------- |
 | MONGO_HOSTS | localhost:27017 | A comma separated list of hosts and port. They will be displayed as connections to Mongodb |
-| ROCKMONGO_PORT | 8060 | The default lighttpd server listening port |
+| ROCKMONGO_PORT | 8050 | The default lighttpd server listening port |
 | MONGO_HIDE_SYSTEM_COLLECTIONS | false | Do not hide Mongodb system collection such as **admin** and **local** |
 | MONGO_AUTH | false | Use mongodb authentication instead of rockmongo control users |
 | MONGO_USER | -     | It works only if MONGO_AUTH enabled |
