@@ -1,9 +1,9 @@
-FROM alpine:3.6
+FROM alpine:3.8
 
 LABEL maintainer="Giuseppe Pellegrino <g.pellegrino@tadaweb.com>"
 
 RUN apk update \
-    && apk add lighttpd php5-common php5-gd php5-curl php5-cgi fcgi php5-pdo php5-dom php5-pear php5-dev php5-xml \
+    && apk add lighttpd php5-common php5-gd php5-curl php5-cgi fcgi php5-pdo php5-dom php5-pear php5-dev php5-xml php5-json \
     && apk add autoconf gcc g++ make libffi-dev openssl-dev bash wget && rm -rf /var/cache/apk/* \
     && ln -s /usr/bin/php5 /usr/bin/php \
     && ln -s /usr/bin/php-cgi5 /usr/bin/php-cgi
@@ -32,5 +32,7 @@ RUN chmod +x /var/www/localhost/rockmongo/config.php
 
 ENV ROCKMONGO_PORT 8050
 ENV MONGO_HOSTS localhost:27017
+
+EXPOSE 8050
 
 CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
